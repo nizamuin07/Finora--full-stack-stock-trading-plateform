@@ -1,0 +1,1 @@
+# Finora-Stock-Trading-Platform
