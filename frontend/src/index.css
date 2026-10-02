@@ -1,0 +1,565 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  min-height: 70px;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 25px;
+  color: #424242;
+  font-size: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #387ed1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background-color: #faf8f5;
+  border-top: 1px solid #eee;
+  padding: 50px 0 20px;
+  color: #424242;
+  font-size: 15px;
+}
+
+
+/* =========================
+   FOOTER LOGO
+========================= */
+
+.footer-logo {
+  width: 175px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.copyright {
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.social-icons a {
+  color: #555;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.social-icons a:hover {
+  color: #387ed1;
+}
+
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 25px 0;
+}
+
+
+/* =========================
+   APP BUTTONS
+========================= */
+
+.app-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.app-buttons a {
+  display: block;
+}
+
+.app-buttons img {
+  width: 145px;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   FOOTER HEADINGS
+========================= */
+
+.footer h5 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+.footer .col-lg-2 a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.footer .col-lg-2 a:hover {
+  color: #387ed1;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer {
+  margin-top: 55px;
+  color: #8a8a8a;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.disclaimer p {
+  margin-bottom: 16px;
+}
+
+.disclaimer a {
+  color: #387ed1;
+  text-decoration: none;
+}
+
+.disclaimer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   BOTTOM LINKS
+========================= */
+
+.bottom-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 25px;
+  padding-top: 10px;
+}
+
+.bottom-links a {
+  color: #777;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.bottom-links a:hover {
+  color: #387ed1;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+  }
+
+  .app-buttons {
+    flex-wrap: wrap;
+  }
+
+  .app-buttons img {
+    width: 140px;
+  }
+
+  .disclaimer {
+    margin-top: 25px;
+  }
+
+  .bottom-links {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+}
+
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.not-found h1 {
+  font-size: 100px;
+  font-weight: 600;
+  color: #387ed1;
+  margin: 0;
+}
+
+.not-found h2 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.not-found p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.home-btn {
+  display: inline-block;
+  background-color: #387ed1;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+.home-btn:hover {
+  background-color: #2f6fb5;
+  color: white;
+}
+
+.about-hero-text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.about-content {
+  margin-top: 100px;
+}
+
+.about-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+.people-section {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.people-section h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.people-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.people-section h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.people-section p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.people-section a {
+    color: #387ed1;
+    text-decoration: none;
+}
+.support-page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+
+/* ================= HEADER ================= */
+
+.support-header {
+  background: #f8f8f8;
+  padding: 45px 0 50px;
+  border-top: 1px solid #eee;
+}
+
+.support-title {
+  font-size: 42px;
+  font-weight: 500;
+  color: #424242;
+  margin: 0;
+}
+
+.tickets-btn {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.support-search {
+  height: 80px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+}
+
+.search-icon {
+  font-size: 23px;
+  margin-right: 20px;
+}
+
+.support-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+
+  font-size: 20px;
+  color: #555;
+}
+
+.support-search input::placeholder {
+  color: #999;
+}
+
+
+/* ================= CONTENT ================= */
+
+.support-content {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.support-category {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.category-header {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.category-header:hover {
+  background: #fafafa;
+}
+
+.category-left {
+  display: flex;
+  align-items: center;
+}
+
+.category-icon {
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7fbff;
+
+  color: #2875d0;
+  font-size: 30px;
+}
+
+.category-header h4 {
+  margin: 0;
+  padding-left: 20px;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  color: #333;
+}
+
+.arrow {
+  color: #2875d0;
+  font-size: 30px;
+  padding-right: 25px;
+}
+
+
+/* ================= QUESTIONS ================= */
+
+.category-body {
+  padding: 20px 30px 25px 100px;
+  border-top: 1px solid #eee;
+}
+
+.question-link {
+  display: block;
+
+  color: #2875d0;
+  text-decoration: none;
+
+  padding: 8px 0;
+}
+
+.question-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ================= ANNOUNCEMENT ================= */
+
+.announcement-box {
+  background: #fff4e4;
+
+  border-left: 10px solid #ff9800;
+
+  padding: 22px 25px;
+
+  margin-bottom: 25px;
+}
+
+.announcement-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.announcement-box li {
+  margin-bottom: 15px;
+}
+
+.announcement-box li:last-child {
+  margin-bottom: 0;
+}
+
+.announcement-box a {
+  color: #2875d0;
+  font-size: 17px;
+}
+
+
+/* ================= QUICK LINKS ================= */
+
+.quick-links {
+  border: 1px solid #eee;
+}
+
+.quick-title {
+  background: #f7f7f7;
+
+  padding: 20px 25px;
+
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.quick-links a {
+  display: block;
+
+  padding: 20px 25px;
+
+  color: #2875d0;
+  text-decoration: none;
+
+  border-top: 1px solid #eee;
+
+  font-size: 17px;
+}
+
+.quick-links a:hover {
+  background: #fafafa;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .support-title {
+    font-size: 32px;
+  }
+
+  .tickets-btn {
+    padding: 9px 15px;
+    font-size: 15px;
+  }
+
+  .support-search {
+    height: 65px;
+    padding: 0 15px;
+  }
+
+  .support-search input {
+    font-size: 15px;
+  }
+
+  .category-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .category-header h4 {
+    font-size: 17px;
+  }
+
+  .category-body {
+    padding-left: 70px;
+  }
+
+}
