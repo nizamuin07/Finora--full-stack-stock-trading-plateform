@@ -8,6 +8,9 @@ const app = express();
 
 app.use(cors({ origin: true }));
 app.use(express.json());
+app.get("/", (_req, res) => {
+  res.json({ name: "FINORA API", status: "ok" });
+});
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
 });

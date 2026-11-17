@@ -7,11 +7,15 @@ test("health endpoint returns an OK status", async () => {
   await once(server, "listening");
 
   try {
-    const response = await fetch(`http://127.0.0.1:${server.address().port}/health`);
-    const body = await response.json();
+    for (const path of ["/", "/health"]) {
+      const response = await fetch(
+        `http://127.0.0.1:${server.address().port}${path}`
+      );
+      const body = await response.json();
 
-    if (!response.ok || body.status !== "ok") {
-      throw new Error(`Unexpected health response: ${response.status}`);
+      if (!response.ok || body.status !== "ok") {
+        throw new Error(`Unexpected ${path} response: ${response.status}`);
+      }
     }
   } finally {
     server.close();
