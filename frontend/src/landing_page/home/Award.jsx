@@ -11,8 +11,8 @@ function Award() {
           />
         </div>
          <div className="col-6">
-            <h2>Largest stock broker in india</h2>
-            <p>2+ million Zerodha clients contribute to over 15% of all retail order volumees in india daily by trading and investing in:</p>
+            <h2>Built for modern Indian investors</h2>
+            <p>FINORA brings portfolio tracking and market information together in one simple experience:</p>
             <div className="row">
                 <div className="col-6">
                     <ul>

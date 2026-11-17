@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Support() {
 
@@ -16,7 +16,7 @@ function Support() {
     },
     {
       icon: "◎",
-      title: "Your Zerodha Account",
+      title: "Your FINORA Account",
       questions: [
         "How do I manage my account?",
         "How do I update my profile?",

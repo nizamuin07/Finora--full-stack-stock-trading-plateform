@@ -1,4 +1,3 @@
-import React from "react";
 import "../index.css";
 
 function Footer() {
@@ -13,14 +12,13 @@ function Footer() {
           {/* ===== COLUMN 1 : LOGO + SOCIAL + APPS ===== */}
         <div className="col-lg-4 col-md-6 mb-4">
 
-            <img
-              src="/logo.svg"
-              alt="Zerodha"
-              className="footer-logo"
-            />
+            <span className="finora-footer-brand">
+              <span>F</span>
+              FINORA
+            </span>
 
             <p className="copyright">
-              © 2010 - 2026, Zerodha Broking Ltd.
+              © 2026, FINORA Trading Platform.
               <br />
               All rights reserved.
             </p>

@@ -189,6 +189,70 @@
    MOBILE
 ========================= */
 
+.finora-nav-brand,
+.finora-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #173e56;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.finora-nav-brand > span,
+.finora-footer-brand > span {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #387ed1;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.finora-footer-brand {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.finora-hero {
+  max-width: 980px;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+}
+
+.finora-hero h1 {
+  color: #173e56;
+  font-size: clamp(34px, 5vw, 52px);
+  letter-spacing: -1px;
+}
+
+.finora-hero-copy {
+  max-width: 660px;
+  margin: 16px auto 24px;
+  color: #666;
+  font-size: 17px;
+}
+
+.finora-primary-button {
+  min-width: 190px;
+  padding: 12px 22px;
+  border: 0;
+  background: #387ed1;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(56, 126, 209, 0.18);
+}
+
+.finora-primary-button:hover {
+  background: #2f70b7;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
 
   .footer {

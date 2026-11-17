@@ -1,5 +1,4 @@
 
-import React from "react";
 
 function Universe() {
   return (
@@ -7,7 +6,7 @@ function Universe() {
 
       {/* Heading */}
       <div className="text-center mb-5">
-        <h1 className="mb-3">Zerodha Products</h1>
+        <h1 className="mb-3">FINORA Products</h1>
 
         <p className="text-muted fs-5">
           Sleek, modern, and intuitive trading platforms
@@ -86,7 +85,7 @@ function Universe() {
           <h2>Console</h2>
 
           <p className="text-muted">
-            The central dashboard for your Zerodha account. Gain insights
+            The central dashboard for your FINORA account. Gain insights
             into your trades and investments with in-depth reports and
             visualisations.
           </p>
@@ -213,7 +212,7 @@ function Universe() {
       <div className="text-center mt-5 pt-5">
 
         <h2 className="mb-3">
-          The Zerodha Universe
+          The FINORA Universe
         </h2>
 
         <p className="text-muted mb-5">

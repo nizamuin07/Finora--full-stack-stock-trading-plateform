@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Landing Page Components
 import HomePage from "./landing_page/home/HomePage";
@@ -16,6 +16,11 @@ import Login from "./landing_page/login/Login";
 // Trading Interface
 import Trading from "./trading/Trading";
 
+function ProtectedRoute({ children }) {
+  const token = localStorage.getItem("finoraToken");
+  return token ? children : <Navigate to="/login" replace />;
+}
+
 function AppLayout() {
   const location = useLocation();
 
@@ -29,11 +34,11 @@ function AppLayout() {
       <Routes>
         {/* Landing Website */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/product" element={<Universe />} />
-        <Route path="/pricing" element={<Hero />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/open-account" element={<OpenAccount />} />
+        <Route path="/about" element={<ProtectedRoute><AboutPage /></ProtectedRoute>} />
+        <Route path="/product" element={<ProtectedRoute><Universe /></ProtectedRoute>} />
+        <Route path="/pricing" element={<ProtectedRoute><Hero /></ProtectedRoute>} />
+        <Route path="/support" element={<ProtectedRoute><Support /></ProtectedRoute>} />
+        <Route path="/open-account" element={<ProtectedRoute><OpenAccount /></ProtectedRoute>} />
 
         {/* Authentication */}
         <Route path="/signup" element={<Signup />} />

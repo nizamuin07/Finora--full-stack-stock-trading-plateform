@@ -1,144 +1,135 @@
-# FINORA – Full-Stack Stock Trading Platform
+# FINORA - Full-Stack Stock Trading Platform
 
-FINORA is a full-stack stock trading platform inspired by modern trading applications like Zerodha Kite. It aims to provide users with a seamless experience for exploring stocks, managing portfolios, and performing virtual stock trading.
+FINORA is a demo trading platform inspired by modern trading applications like
+Zerodha Kite. Users can create an account, view market charts, manage a
+simulated portfolio, and place virtual orders. It does not execute real trades
+or connect to a broker.
 
-## 🚀 Project Overview
+## Features
 
-FINORA is designed as a demo stock trading platform where users can create accounts, log in, manage virtual funds, and monitor their trading activities.
+### User accounts
 
-## ✨ Features
+- Signup and login with hashed passwords and JWT authentication
 
-### User Authentication
-- User Registration
-- Secure Login
-- Password Hashing
-- JWT-based Authentication
+### Trading dashboard
 
-### Trading Dashboard
-- Portfolio Overview
-- Holdings Management
-- Orders Management
-- Positions Tracking
-- Funds Management
+- Portfolio overview, holdings, orders, positions, and simulated funds
+- Watchlist, buy/sell order ticket, and virtual stop-loss/take-profit
+- Candlestick chart with multiple timeframes and market-history data
 
-### Fund Management
-- Add Virtual Funds
-- Withdraw Virtual Funds
-- Available Balance Tracking
+Market quotes and chart history use Yahoo Finance when available and may be
+delayed or unavailable. All order and portfolio activity is for demonstration
+only; real-money trading is not supported.
 
-### Trading Features
-- Stock Watchlist
-- Buy and Sell Interface
-- Stock Market Dashboard
-- Virtual Trading (In Development)
+## Technology stack
 
-## 🛠️ Technology Stack
+- Frontend: React, Vite, JavaScript, CSS
+- Backend: Node.js, Express, MongoDB, Mongoose
+- Authentication: JWT and bcryptjs
+- Market data: Yahoo Finance chart endpoint
 
-**Frontend**
-- React.js
-- Vite
-- JavaScript
-- HTML5
-- CSS3
-- Bootstrap
-
-**Backend**
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- bcryptjs
-
-## 📁 Project Structure
+## Project layout
 
 ```text
-FINORA/
-├── backend/
-│   ├── models/
-│   ├── schemas/
-│   ├── package.json
-│   └── index.js
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── landing_page/
-│   │   └── trading/
-│   └── package.json
-│
-├── README.md
-└── package.json
+backend/
+  app.js                    Express middleware and route composition
+  server.js                 Environment checks, MongoDB connection, startup
+  controllers/               HTTP request handlers
+  middleware/                Authentication middleware
+  model/                     Mongoose models
+  routes/                    API route definitions
+  schemas/                   Mongoose schemas
+  services/                  Market data provider integration
+
+frontend/src/
+  landing_page/              Public pages and authentication screens
+  services/                  Shared API URL configuration
+  trading/
+    components/              Chart, market watch, order and portfolio panels
+    data/                    Demo market and portfolio fixtures
+    services/                Market API client
+    utils/                   Chart calculations and formatting
+    Trading.jsx              Trading page state and workflow
 ```
 
-## ⚙️ Installation and Setup
+The backend follows a lightweight MVC-style flow:
+**route -> controller -> service/model -> response**.
 
-### 1. Clone the Repository
+## Run locally
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
+Install and start the backend:
 
-### 2. Navigate to Project
-
-```bash
-cd FINORA
-```
-
-### 3. Install Backend Dependencies
-
-```bash
+```powershell
 cd backend
-npm install
-```
-
-### 4. Configure Environment Variables
-
-Create a `.env` file inside the backend folder.
-
-```env
-PORT=3002
-MONGO_URL=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
-
-### 5. Start Backend
-
-```bash
-npm start
-```
-
-### 6. Install Frontend Dependencies
-
-Open another terminal:
-
-```bash
-cd frontend
-npm install
-```
-
-### 7. Start Frontend
-
-```bash
+npm ci
 npm run dev
 ```
 
-## 🔐 Security
+Create `backend/.env` with:
 
-- Passwords are hashed using bcryptjs.
-- Authentication uses JSON Web Tokens.
-- Environment variables are used for sensitive configuration.
+```env
+MONGO_URL=your_mongodb_connection_string
+JWT_SECRET=your_long_random_secret
+```
 
-## 📌 Project Status
+In another terminal, install and start the frontend:
 
-**Currently Under Development**
+```powershell
+cd frontend
+npm ci
+npm run dev
+```
 
-FINORA is being developed as a virtual stock trading platform. Real-money trading and actual exchange order execution are not supported.
+The frontend uses `http://localhost:3002` by default during local development.
+To use another backend URL, set `VITE_API_URL` in the frontend environment
+before starting or building the frontend.
 
-## 👨‍💻 Developer
+## Deploy on Render
 
-Developed as a Full-Stack Development Project.
+Create two services from this repository.
 
----
+### Backend web service
 
-⭐ If you like this project, consider giving it a star!
+- Root Directory: `backend`
+- Build Command: `npm ci`
+- Start Command: `npm start`
+- Environment Variables:
+  - `MONGO_URL`: MongoDB connection string
+  - `JWT_SECRET`: long random secret
+
+Render provides `PORT` automatically. The server connects to MongoDB before it
+starts listening. Use `/health` as an optional Render health-check path.
+
+### Frontend static site
+
+- Root Directory: `frontend`
+- Build Command: `npm ci && npm run build`
+- Publish Directory: `dist`
+- Environment Variable: `VITE_API_URL=https://<your-backend-service>.onrender.com`
+
+Use the actual public URL of the backend service, including `https://`, and
+redeploy the frontend after changing this build-time variable. The frontend
+also accepts a bare Render hostname. Do not set `VITE_API_URL` to
+`localhost` in production.
+
+If direct navigation or refresh on routes such as `/trading` returns a 404,
+add a Render static-site rewrite from `/*` to `/index.html`.
+
+## Checks
+
+```powershell
+cd frontend
+npm run lint
+npm test
+npm run build
+
+cd ..\backend
+npm test
+```
+
+## Security and project status
+
+Keep `.env` files and all database credentials and secrets out of Git. Configure
+production secrets through Render environment variables. FINORA is under
+development as a virtual-trading demo and is not intended for real-money
+trading.

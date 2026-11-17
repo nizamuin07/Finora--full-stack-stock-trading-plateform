@@ -1,4 +1,3 @@
-import React from 'react';
 
 function Stats() {
   return (
@@ -12,9 +11,8 @@ function Stats() {
 
           <h5 className="mt-4 fs-5">Customer-first always</h5>
           <p className='text-muted'>
-            That's why 1.8+ crore customers trust Zerodha with ~ ₹9 lakh crores
-            of equity investments, making us India’s largest broker; contributing
-            to 15% of daily retail exchange volumes in India.
+            FINORA is designed around clear portfolio insights, simple account
+            management, and a distraction-free investing experience.
           </p>
 
           <h5 className="mt-4 fs-5">No spam or gimmicks</h5>
@@ -26,10 +24,10 @@ function Stats() {
             </a>
           </p>
 
-          <h5 className="mt-4 fs-5">The Zerodha universe</h5>
+          <h5 className="mt-4 fs-5">The FINORA experience</h5>
           <p className='text-muted'>
-            Not just an app, but a whole ecosystem. Our investments in 30+
-            fintech startups offer you tailored services specific to your needs.
+            Track markets, review positions, manage funds, and follow your
+            investments from one connected dashboard.
           </p>
 
           <h5 className="mt-4 fs-5">Do better with money</h5>
