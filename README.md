@@ -1,4 +1,5 @@
 # FINORA - Full-Stack Stock Trading Platform
+https://finora-full-stack-stock-trading-plateform.onrender.com
 
 FINORA is a demo trading platform inspired by modern trading applications like
 Zerodha Kite. Users can create an account, view market charts, manage a
