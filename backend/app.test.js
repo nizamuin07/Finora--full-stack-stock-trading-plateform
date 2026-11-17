@@ -1,5 +1,8 @@
 const { once } = require("node:events");
-const { after, test } = require("node:test");
+const { test } = require("node:test");
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const app = require("./app");
 
 test("health endpoint returns an OK status", async () => {
@@ -7,14 +10,21 @@ test("health endpoint returns an OK status", async () => {
   await once(server, "listening");
 
   try {
-    for (const path of ["/", "/health"]) {
+    for (const endpoint of ["/health", "/", "/trading"]) {
       const response = await fetch(
-        `http://127.0.0.1:${server.address().port}${path}`
+        `http://127.0.0.1:${server.address().port}${endpoint}`
       );
-      const body = await response.json();
 
-      if (!response.ok || body.status !== "ok") {
-        throw new Error(`Unexpected ${path} response: ${response.status}`);
+      if (endpoint === "/health") {
+        const body = await response.json();
+        assert.equal(response.status, 200);
+        assert.equal(body.status, "ok");
+      } else {
+        assert.notEqual(response.status, 401);
+        if (fs.existsSync(path.resolve(__dirname, "../frontend/dist/index.html"))) {
+          assert.equal(response.status, 200);
+          assert.match(response.headers.get("content-type"), /text\/html/);
+        }
       }
     }
   } finally {

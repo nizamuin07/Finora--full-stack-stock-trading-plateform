@@ -5,16 +5,10 @@ const apiBaseUrl = configuredApiUrl
     : `https://${configuredApiUrl}`
   : import.meta.env.DEV
     ? "http://localhost:3002"
-    : "";
+    : window.location.origin;
 
 const normalizedApiBaseUrl = apiBaseUrl.replace(/\/+$/, "");
 
 export const apiUrl = (path) => {
-  if (!normalizedApiBaseUrl) {
-    throw new Error(
-      "VITE_API_URL is missing. Set it to your Render backend URL and redeploy the frontend."
-    );
-  }
-
   return `${normalizedApiBaseUrl}${path.startsWith("/") ? path : `/${path}`}`;
 };

@@ -86,34 +86,25 @@ before starting or building the frontend.
 
 ## Deploy on Render
 
-Create two services from this repository.
+Deploy both frontend and backend from this repository as one Render Web
+Service to use a single URL:
 
-### Backend web service
-
-- Root Directory: `backend`
-- Build Command: `npm ci`
-- Start Command: `npm start`
+- Root Directory: leave blank (repository root)
+- Build Command:
+  `npm ci --prefix backend && npm ci --prefix frontend && npm run build --prefix frontend`
+- Start Command: `npm start --prefix backend`
 - Environment Variables:
   - `MONGO_URL`: MongoDB connection string
   - `JWT_SECRET`: long random secret
 
 Render provides `PORT` automatically. The server connects to MongoDB before it
-starts listening. Use `/health` as an optional Render health-check path.
+starts listening. Use `/health` as the Render health-check path. The built
+frontend is served by the backend, including direct navigation to `/trading`,
+and frontend API requests use the same service origin.
 
-### Frontend static site
-
-- Root Directory: `frontend`
-- Build Command: `npm ci && npm run build`
-- Publish Directory: `dist`
-- Environment Variable: `VITE_API_URL=https://<your-backend-service>.onrender.com`
-
-Use the actual public URL of the backend service, including `https://`, and
-redeploy the frontend after changing this build-time variable. The frontend
-also accepts a bare Render hostname. Do not set `VITE_API_URL` to
-`localhost` in production.
-
-If direct navigation or refresh on routes such as `/trading` returns a 404,
-add a Render static-site rewrite from `/*` to `/index.html`.
+To update an existing backend-only Render service, change its Root Directory
+to the repository root and use the build and start commands above. Keep the
+MongoDB and JWT environment variables configured before redeploying.
 
 ## Checks
 

@@ -11,12 +11,11 @@ const {
 
 const router = express.Router();
 
-router.use(authenticateToken);
-router.get("/test-holdings", getHoldings);
-router.get("/test-orders", getOrders);
-router.get("/test-positions", getPositions);
-router.get("/test-funds", getFunds);
-router.post("/add-funds", addFunds);
-router.post("/withdraw-funds", withdrawFunds);
+router.get("/test-holdings", authenticateToken, getHoldings);
+router.get("/test-orders", authenticateToken, getOrders);
+router.get("/test-positions", authenticateToken, getPositions);
+router.get("/test-funds", authenticateToken, getFunds);
+router.post("/add-funds", authenticateToken, addFunds);
+router.post("/withdraw-funds", authenticateToken, withdrawFunds);
 
 module.exports = router;
