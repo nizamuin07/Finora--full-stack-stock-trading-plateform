@@ -1,22 +1,25 @@
 function People() {
   return (
-    <div className="container people-section">
-
-      {/* Heading */}
-      <h2 className="mb-5 text-center">People</h2>
+    <section className="people-section">
+      <div className="container">
+      <div className="about-section-heading text-center">
+        <span className="about-eyebrow">THE PEOPLE BEHIND FINORA</span>
+        <h2>Meet the team</h2>
+        <p>Building thoughtful tools for a more confident investing journey.</p>
+      </div>
 
       {/* Nithin Kamath Section */}
-      <div className="row align-items-center mb-5">
+      <div className="row align-items-center mb-5 about-lead-card">
 
         {/* Image */}
-        <div className="col-md-6 text-center">
+        <div className="col-md-5 text-center">
           <img
             src="https://zerodha.com/static/images/nithin-kamath.jpg"
             alt="Nithin Kamath"
             className="people-img"
           />
 
-          <h5 className="mt-4" style={{ opacity: 0.8 }}>
+          <h5 className="mt-4">
             Nithin Kamath
           </h5>
 
@@ -26,7 +29,7 @@ function People() {
         </div>
 
         {/* Description */}
-        <div className="col-md-6">
+        <div className="col-md-7">
           <p>
             Nithin bootstrapped and founded Zerodha in 2010 to overcome
             the hurdles he faced during his decade long stint as a trader.
@@ -55,10 +58,11 @@ function People() {
 
 
       {/* Other People */}
-      <div className="row text-center">
+      <div className="row g-4 text-center">
 
         {/* Nikhil */}
-        <div className="col-md-4 mb-5">
+        <div className="col-md-4">
+          <article className="person-card">
           <img
             src="https://zerodha.com/static/images/Nikhil.jpg"
             alt="Nikhil Kamath"
@@ -76,11 +80,13 @@ function People() {
           <a href="#">
             Bio
           </a>
+          </article>
         </div>
 
 
         {/* Kailash */}
-        <div className="col-md-4 mb-5">
+        <div className="col-md-4">
+          <article className="person-card">
           <img
             src="https://zerodha.com/static/images/Kailash.jpg"
             alt="Dr. Kailash Nadh"
@@ -98,11 +104,13 @@ function People() {
           <a href="#">
             Bio
           </a>
+          </article>
         </div>
 
 
         {/* Venu */}
-        <div className="col-md-4 mb-5">
+        <div className="col-md-4">
+          <article className="person-card">
           <img
             src="https://zerodha.com/static/images/Venu.jpg"
             alt="Venu Madhav"
@@ -120,11 +128,13 @@ function People() {
           <a href="#">
             Bio
           </a>
+          </article>
         </div>
 
 
         {/* Seema Patil */}
-<div className="col-md-4 mb-5">
+<div className="col-md-4">
+  <article className="person-card">
   <img
     src="https://zerodha.com/static/images/Seema.jpg"
     alt="Seema Patil"
@@ -138,11 +148,13 @@ function People() {
   </p>
 
   <a href="#">Bio</a>
+  </article>
 </div>
 
 
 {/* Karthik Rangappa */}
-<div className="col-md-4 mb-5">
+<div className="col-md-4">
+  <article className="person-card">
   <img
     src="https://zerodha.com/static/images/karthik.jpg"
     alt="Karthik Rangappa"
@@ -156,11 +168,13 @@ function People() {
   </p>
 
   <a href="#">Bio</a>
+  </article>
 </div>
 
 
 {/* Austin Prakesh */}
-<div className="col-md-4 mb-5">
+<div className="col-md-4">
+  <article className="person-card">
   <img
     src="https://zerodha.com/static/images/Austin.jpg"
     alt="Austin Prakesh"
@@ -174,11 +188,13 @@ function People() {
   </p>
 
   <a href="#">Bio</a>
+  </article>
 </div>
 
       </div>
 
-    </div>
+      </div>
+    </section>
   );
 }
 
