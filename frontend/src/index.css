@@ -228,11 +228,12 @@
 
 .finora-landing-hero {
   position: relative;
-  min-height: 680px;
+  min-height: 720px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 82% 44%, rgba(82, 216, 161, 0.13), transparent 21%),
-    linear-gradient(135deg, #f7fbfa 0%, #f9fbfe 54%, #eef5fb 100%);
+    radial-gradient(circle at 78% 42%, rgba(42, 209, 145, 0.16), transparent 20%),
+    radial-gradient(circle at 10% 90%, rgba(56, 126, 209, 0.12), transparent 24%),
+    linear-gradient(135deg, #071923 0%, #0a222e 48%, #0d1f2d 100%);
   border-bottom: 1px solid #edf1f3;
 }
 
@@ -241,27 +242,27 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(27, 74, 91, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(27, 74, 91, 0.035) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to right, transparent 5%, black 55%, transparent 100%);
+    linear-gradient(rgba(151, 208, 190, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(151, 208, 190, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to right, black 5%, black 72%, transparent 100%);
   pointer-events: none;
 }
 
 .finora-hero-grid {
   position: relative;
   z-index: 2;
-  width: min(1180px, calc(100% - 48px));
-  min-height: 680px;
+  width: min(1240px, calc(100% - 64px));
+  min-height: 650px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 57%) minmax(320px, 43%);
+  grid-template-columns: minmax(0, 54%) minmax(420px, 46%);
   align-items: center;
 }
 
 .finora-hero-content {
-  max-width: 650px;
-  padding: 70px 0;
+  max-width: 680px;
+  padding: 62px 0;
 }
 
 .finora-hero-kicker {
@@ -269,7 +270,7 @@
   align-items: center;
   gap: 10px;
   margin: 0 0 18px;
-  color: #16835c;
+  color: #67ddb1;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2.2px;
@@ -283,26 +284,26 @@
 }
 
 .finora-hero-title {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0;
-  color: #16384a;
-  font-size: clamp(48px, 6vw, 78px);
-  line-height: 0.99;
-  letter-spacing: -4px;
-  font-weight: 750;
+  color: #f4faf8;
+  font-size: clamp(52px, 5.4vw, 76px);
+  line-height: 1;
+  letter-spacing: -3.8px;
+  font-weight: 800;
 }
 
 .finora-hero-title span {
   display: block;
-  color: #387ed1;
+  color: #58d2a3;
   margin-top: 10px;
 }
 
 .finora-hero-copy {
-  max-width: 590px;
+  max-width: 610px;
   margin: 26px 0 30px;
-  color: #667985;
-  font-size: 17px;
+  color: #b5c6ce;
+  font-size: 18px;
   line-height: 1.75;
 }
 
@@ -324,26 +325,26 @@
 
 .finora-primary-button {
   border: 0;
-  background: #173e56;
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(23, 62, 86, 0.16);
+  background: #58d2a3;
+  color: #092018;
+  box-shadow: 0 16px 36px rgba(50, 193, 143, 0.22);
 }
 
 .finora-primary-button:hover {
-  background: #102f40;
+  background: #75dfb7;
   transform: translateY(-2px);
-  box-shadow: 0 18px 34px rgba(23, 62, 86, 0.22);
+  box-shadow: 0 20px 40px rgba(50, 193, 143, 0.28);
 }
 
 .finora-secondary-button {
-  border: 1px solid #cad7df;
-  background: rgba(255, 255, 255, 0.72);
-  color: #315267;
+  border: 1px solid rgba(192, 219, 211, 0.24);
+  background: rgba(255, 255, 255, 0.055);
+  color: #dce9e5;
 }
 
 .finora-secondary-button:hover {
-  border-color: #91aab9;
-  background: #fff;
+  border-color: rgba(192, 219, 211, 0.48);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -352,7 +353,7 @@
   flex-wrap: wrap;
   gap: 10px 22px;
   margin-top: 28px;
-  color: #7b8d98;
+  color: #91a8b1;
   font-size: 12px;
 }
 
@@ -370,7 +371,311 @@
   right: 0;
   width: 48%;
   height: 100%;
-  opacity: 0.96;
+  opacity: 0.38;
+}
+
+.finora-market-preview {
+  position: relative;
+  z-index: 3;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.market-preview-glow {
+  position: absolute;
+  width: 410px;
+  height: 410px;
+  border-radius: 50%;
+  background: rgba(69, 216, 166, 0.12);
+  filter: blur(38px);
+}
+
+.market-preview-card {
+  position: relative;
+  width: min(520px, 92%);
+  min-height: 430px;
+  padding: 24px;
+  border: 1px solid rgba(178, 220, 206, 0.16);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(17, 48, 61, 0.94), rgba(8, 31, 42, 0.94));
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(18px);
+  transform: rotateY(-4deg) rotateX(2deg);
+  animation: finoraPreviewFloat 6s ease-in-out infinite;
+}
+
+.market-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4px 2px 18px;
+}
+
+.market-preview-head div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.market-preview-head div span,
+.market-float-card span {
+  color: #8da9a3;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.market-preview-head strong {
+  color: #edf8f4;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.market-preview-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(88, 210, 163, 0.16);
+  border-radius: 20px;
+  color: #85dfbd;
+  background: rgba(88, 210, 163, 0.08);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.market-preview-live i,
+.market-float-card i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #58d2a3;
+  box-shadow: 0 0 12px #58d2a3;
+}
+
+.market-preview-chart {
+  position: relative;
+  height: 210px;
+  margin: 2px 0 16px 34px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(174, 212, 199, 0.08);
+}
+
+.market-preview-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.market-chart-grid {
+  fill: none;
+  stroke: rgba(171, 211, 198, 0.09);
+  stroke-width: 1;
+  stroke-dasharray: 5 7;
+}
+
+.market-chart-area {
+  fill: url("#finoraChartFill");
+}
+
+.market-chart-line {
+  fill: none;
+  stroke: #58d2a3;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 5px 8px rgba(88, 210, 163, 0.25));
+  stroke-dasharray: 900;
+  animation: finoraChartDraw 3s ease-out both;
+}
+
+.chart-y-labels {
+  position: absolute;
+  left: -34px;
+  top: 31px;
+  bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #718a91;
+  font-size: 9px;
+}
+
+.chart-up-label {
+  position: absolute;
+  right: 8px;
+  top: 18px;
+  color: #58d2a3;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.market-preview-stocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.market-preview-stocks > div {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 7px;
+  padding: 10px 7px;
+  border: 1px solid rgba(177, 215, 202, 0.07);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.stock-symbol {
+  width: 31px;
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #091b22;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.reliance { background: #80c7ed; }
+.tcs { background: #d4b3ef; }
+.hdfc { background: #7de0ba; }
+
+.market-preview-stocks p {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.market-preview-stocks strong {
+  overflow: hidden;
+  color: #dbe8e4;
+  font-size: 8px;
+  text-overflow: ellipsis;
+}
+
+.market-preview-stocks small {
+  color: #91a7a4;
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.market-preview-stocks em {
+  grid-column: 2;
+  color: #58d2a3;
+  font-size: 9px;
+  font-style: normal;
+  margin-top: 4px;
+}
+
+.market-preview-stocks em.down { color: #e89b9b; }
+
+.market-float-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 16px;
+  border: 1px solid rgba(178, 220, 206, 0.15);
+  border-radius: 10px;
+  background: rgba(12, 42, 53, 0.94);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  animation: finoraFloat 5s ease-in-out infinite;
+}
+
+.market-float-card strong {
+  color: #edf8f4;
+  font-size: 16px;
+}
+
+.market-float-card small {
+  color: #58d2a3;
+  font-size: 11px;
+}
+
+.market-float-left {
+  left: -12px;
+  bottom: 26px;
+}
+
+.market-float-right {
+  top: 54px;
+  right: -12px;
+}
+
+.market-float-right strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.finora-market-ticker {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(186, 215, 205, 0.1);
+  background: rgba(5, 20, 28, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.finora-market-ticker > div {
+  min-width: 210px;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  row-gap: 4px;
+  padding: 0 25px;
+  border-right: 1px solid rgba(186, 215, 205, 0.1);
+}
+
+.finora-market-ticker span {
+  grid-column: 1 / -1;
+  color: #7f999f;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.finora-market-ticker strong {
+  color: #e8f1ee;
+  font-size: 12px;
+}
+
+.finora-market-ticker em {
+  color: #58d2a3;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.finora-market-ticker em.ticker-down { color: #e89b9b; }
+
+@keyframes finoraPreviewFloat {
+  0%, 100% { transform: rotateY(-4deg) rotateX(2deg) translateY(0); }
+  50% { transform: rotateY(-2deg) rotateX(1deg) translateY(-8px); }
+}
+
+@keyframes finoraFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes finoraChartDraw {
+  from { stroke-dashoffset: 900; }
+  to { stroke-dashoffset: 0; }
 }
 
 .home-reveal {
@@ -421,12 +726,12 @@
   }
 
   .finora-landing-hero {
-    min-height: 760px;
+    min-height: 1020px;
   }
 
   .finora-hero-grid {
     width: calc(100% - 32px);
-    min-height: 760px;
+    min-height: 950px;
     grid-template-columns: 1fr;
     align-items: start;
   }
@@ -463,11 +768,59 @@
   }
 
   .finora-hero-canvas {
-    top: auto;
-    bottom: -20px;
+    top: 430px;
+    bottom: auto;
     width: 100%;
-    height: 330px;
-    opacity: 0.62;
+    height: 520px;
+    opacity: 0.28;
+  }
+
+  .finora-market-preview {
+    min-height: 430px;
+    margin-top: 18px;
+  }
+
+  .market-preview-card {
+    width: 100%;
+    min-height: 360px;
+    padding: 16px;
+  }
+
+  .market-preview-head strong {
+    font-size: 24px;
+  }
+
+  .market-preview-chart {
+    height: 170px;
+  }
+
+  .market-preview-stocks {
+    gap: 5px;
+  }
+
+  .market-preview-stocks > div {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 8px 5px;
+  }
+
+  .stock-symbol {
+    width: 24px;
+    height: 24px;
+  }
+
+  .market-float-card {
+    display: none;
+  }
+
+  .finora-market-ticker {
+    height: 70px;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .finora-market-ticker > div {
+    min-width: 180px;
+    padding: 0 16px;
   }
 
   .navbar .container {
@@ -482,6 +835,36 @@
   .navbar-nav .nav-link {
     padding: 10px 4px;
   }
+}
+
+.navbar {
+  backdrop-filter: blur(16px);
+}
+
+.navbar.bg-white {
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+.home-reveal h2,
+.home-reveal h3,
+.home-reveal h4 {
+  color: #173e56;
+  letter-spacing: -0.5px;
+}
+
+.home-reveal p {
+  color: #667985;
+  line-height: 1.75;
+}
+
+.home-reveal img {
+  filter: saturate(0.92);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.home-reveal img:hover {
+  filter: saturate(1.05);
+  transform: scale(1.015);
 }
 
 .not-found {
