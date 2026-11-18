@@ -21,11 +21,17 @@ function ProtectedRoute({ children }) {
   return token ? children : <Navigate to="/login" replace />;
 }
 
+function PublicAuthRoute({ children }) {
+  const token = localStorage.getItem("finoraToken");
+  return token ? <Navigate to="/trading" replace /> : children;
+}
+
 function AppLayout() {
   const location = useLocation();
 
   // Hide landing Navbar and Footer on Trading Page
   const isTradingPage = location.pathname === "/trading";
+  const isAuthenticated = Boolean(localStorage.getItem("finoraToken"));
 
   return (
     <>
@@ -33,7 +39,10 @@ function AppLayout() {
 
       <Routes>
         {/* Landing Website */}
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={isAuthenticated ? <Navigate to="/trading" replace /> : <HomePage />}
+        />
         <Route path="/about" element={<ProtectedRoute><AboutPage /></ProtectedRoute>} />
         <Route path="/product" element={<ProtectedRoute><Universe /></ProtectedRoute>} />
         <Route path="/pricing" element={<ProtectedRoute><Hero /></ProtectedRoute>} />
@@ -41,11 +50,11 @@ function AppLayout() {
         <Route path="/open-account" element={<ProtectedRoute><OpenAccount /></ProtectedRoute>} />
 
         {/* Authentication */}
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<PublicAuthRoute><Signup /></PublicAuthRoute>} />
+        <Route path="/login" element={<PublicAuthRoute><Login /></PublicAuthRoute>} />
 
         {/* Trading Interface */}
-        <Route path="/trading" element={<Trading />} />
+        <Route path="/trading" element={<ProtectedRoute><Trading /></ProtectedRoute>} />
 
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />

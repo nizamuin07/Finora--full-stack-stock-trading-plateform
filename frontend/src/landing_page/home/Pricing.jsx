@@ -1,11 +1,11 @@
 
 function Pricing() {
   return (
-    <div className="container mt-5 mb-5">
+    <div className="container mt-5 mb-5 home-reveal">
       <div className="row">
 
         {/* Left half */}
-        <div className="col-4">
+        <div className="col-12 col-md-4 mb-4 mb-md-0">
           <h4 className="mb-2">Unbeatable pricing</h4>
 
           <p className="mb-3">
@@ -18,14 +18,14 @@ function Pricing() {
           </a>
         </div>
 
-        <div className="col-2"></div>
+        <div className="d-none d-md-block col-md-2"></div>
 
         {/* Right half */}
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <div className="row">
 
             {/* Free account opening */}
-            <div className="col-4">
+            <div className="col-12 col-sm-4 mb-3 mb-sm-0">
               <div className="d-flex align-items-start">
                 <span className="text-warning fs-5">₹</span>
 
@@ -40,7 +40,7 @@ function Pricing() {
             </div>
 
             {/* Free equity delivery */}
-            <div className="col-4">
+            <div className="col-12 col-sm-4 mb-3 mb-sm-0">
               <div className="d-flex align-items-start">
                 <span className="text-warning fs-5">₹</span>
 
@@ -55,7 +55,7 @@ function Pricing() {
             </div>
 
             {/* Intraday */}
-            <div className="col-4">
+            <div className="col-12 col-sm-4">
               <div className="d-flex align-items-start">
                 <span className="text-warning fs-5">₹</span>
 

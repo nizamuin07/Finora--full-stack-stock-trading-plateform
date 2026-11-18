@@ -1,11 +1,11 @@
 
 function Stats() {
   return (
-    <div className="container py-5">
+    <div className="container py-5 home-reveal">
       <div className="row">
 
         {/* Left Section */}
-        <div className="col-6 text-start">
+        <div className="col-12 col-md-6 text-start mb-4 mb-md-0">
 
           <h4 className="fs-4">Trust with confidence</h4>
 
@@ -40,7 +40,7 @@ function Stats() {
         </div>
 
         {/* Right Section */}
-        <div className="col-6">
+        <div className="col-12 col-md-6">
 
           <img
             src="/ecosystem.png"

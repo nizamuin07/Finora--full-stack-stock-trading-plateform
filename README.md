@@ -8,6 +8,14 @@ or connect to a broker.
 
 ## Features
 
+### Custom visual experience
+
+- Animated FINORA landing page with GSAP entry and scroll reveals
+- Interactive Three.js 3D market-orbit background through React Three Fiber
+- Drei-powered floating scene components and responsive WebGL presentation
+- Mobile-first layout with no horizontal overflow
+- Auth-aware navigation: logged-in users return directly to the trading dashboard
+
 ### User accounts
 
 - Signup and login with hashed passwords and JWT authentication
@@ -24,7 +32,7 @@ only; real-money trading is not supported.
 
 ## Technology stack
 
-- Frontend: React, Vite, JavaScript, CSS
+- Frontend: React, Vite, JavaScript, CSS, GSAP, Three.js, React Three Fiber, Drei
 - Backend: Node.js, Express, MongoDB, Mongoose
 - Authentication: JWT and bcryptjs
 - Market data: Yahoo Finance chart endpoint

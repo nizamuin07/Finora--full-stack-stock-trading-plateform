@@ -1,14 +1,14 @@
 function Education() {
     return ( 
-     <div className="container mt-5">
+     <div className="container mt-5 home-reveal">
          <div className="row">
             {/* left side */}
-            <div className="col-6">
+            <div className="col-12 col-md-6 mb-4 mb-md-0">
                 <img src="education.svg" alt="education" className='img-fluid' />
             </div>
 
             {/* right side */}
-            <div className="col-6">
+            <div className="col-12 col-md-6">
                 <h3 className='mt-5 text-muted'>Free and open market education</h3>
                 <p className='mt-4'>Varsity, the largest online stock market education book in the world covering everything from the basics to advanced trading.</p>
                  <a href="/" className="text-decoration-none">

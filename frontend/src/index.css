@@ -226,34 +226,170 @@
   align-items: center;
 }
 
-.finora-hero h1 {
-  color: #173e56;
-  font-size: clamp(34px, 5vw, 52px);
-  letter-spacing: -1px;
+.finora-landing-hero {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 44%, rgba(82, 216, 161, 0.13), transparent 21%),
+    linear-gradient(135deg, #f7fbfa 0%, #f9fbfe 54%, #eef5fb 100%);
+  border-bottom: 1px solid #edf1f3;
+}
+
+.finora-landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(27, 74, 91, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 74, 91, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to right, transparent 5%, black 55%, transparent 100%);
+  pointer-events: none;
+}
+
+.finora-hero-grid {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 48px));
+  min-height: 680px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 57%) minmax(320px, 43%);
+  align-items: center;
+}
+
+.finora-hero-content {
+  max-width: 650px;
+  padding: 70px 0;
+}
+
+.finora-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: #16835c;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.finora-hero-kicker span {
+  width: 34px;
+  height: 2px;
+  background: #18a66f;
+}
+
+.finora-hero-title {
+  max-width: 650px;
+  margin: 0;
+  color: #16384a;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.99;
+  letter-spacing: -4px;
+  font-weight: 750;
+}
+
+.finora-hero-title span {
+  display: block;
+  color: #387ed1;
+  margin-top: 10px;
 }
 
 .finora-hero-copy {
-  max-width: 660px;
-  margin: 16px auto 24px;
-  color: #666;
+  max-width: 590px;
+  margin: 26px 0 30px;
+  color: #667985;
   font-size: 17px;
+  line-height: 1.75;
+}
+
+.finora-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.finora-primary-button,
+.finora-secondary-button {
+  min-height: 52px;
+  min-width: 190px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: 0.25s ease;
 }
 
 .finora-primary-button {
-  min-width: 190px;
-  padding: 12px 22px;
   border: 0;
-  background: #387ed1;
-  font-weight: 600;
-  box-shadow: 0 8px 18px rgba(56, 126, 209, 0.18);
+  background: #173e56;
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(23, 62, 86, 0.16);
 }
 
 .finora-primary-button:hover {
-  background: #2f70b7;
-  transform: translateY(-1px);
+  background: #102f40;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(23, 62, 86, 0.22);
+}
+
+.finora-secondary-button {
+  border: 1px solid #cad7df;
+  background: rgba(255, 255, 255, 0.72);
+  color: #315267;
+}
+
+.finora-secondary-button:hover {
+  border-color: #91aab9;
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.finora-hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 28px;
+  color: #7b8d98;
+  font-size: 12px;
+}
+
+.finora-hero-trust span::before {
+  content: "✓";
+  margin-right: 7px;
+  color: #16a36b;
+  font-weight: 800;
+}
+
+.finora-hero-canvas {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
+  opacity: 0.96;
+}
+
+.home-reveal {
+  will-change: transform, opacity;
 }
 
 @media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 
   .footer {
     padding: 35px 20px 20px;
@@ -282,6 +418,69 @@
   .bottom-links {
     justify-content: flex-start;
     gap: 15px;
+  }
+
+  .finora-landing-hero {
+    min-height: 760px;
+  }
+
+  .finora-hero-grid {
+    width: calc(100% - 32px);
+    min-height: 760px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .finora-hero-content {
+    max-width: 100%;
+    padding: 55px 0 0;
+  }
+
+  .finora-hero-title {
+    font-size: clamp(39px, 12vw, 52px);
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+  }
+
+  .finora-hero-copy {
+    max-width: 520px;
+    margin: 20px 0 24px;
+    font-size: 15px;
+  }
+
+  .finora-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .finora-primary-button,
+  .finora-secondary-button {
+    width: 100%;
+  }
+
+  .finora-hero-trust {
+    margin-top: 20px;
+  }
+
+  .finora-hero-canvas {
+    top: auto;
+    bottom: -20px;
+    width: 100%;
+    height: 330px;
+    opacity: 0.62;
+  }
+
+  .navbar .container {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .navbar-collapse {
+    padding: 8px 0 12px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 4px;
   }
 }
 
